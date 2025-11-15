@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata: 
-  name: java-app
+  name: javaapp
   namespace: dev
   labels: 
     app: java
@@ -10,7 +10,7 @@ spec:
   replicas: 5
   selector: 
     matchLabels:
-      app: java
+      app: javapods
   strategy:
     type: RollingUpdate
     rollingUpdate:
@@ -23,7 +23,7 @@ spec:
     spec:
       containers:
         - name: my-container
-          image: mudasir102/java-repo:my-java
+          image: 003364515214.dkr.ecr.ap-south-1.amazonaws.com/gaming/k8s:1.1
           ports:
             - containerPort: 8080
           resources:
