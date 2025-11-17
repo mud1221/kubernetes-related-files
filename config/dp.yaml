@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mydp
+  namespace: prod
+  labels:
+    app: java
+spec:
+  minReadySeconds: 5
+  replicas: 5
+  selector:
+    matchLabels:
+      app: myapp
+  strategy: 
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+  template:
+    metadata:
+      labels:
+        app: myapp
+    spec: 
+      contsiners:
+        - name: my-container
+          image: longflew/ingress:YELLOWPAGE
+          ports: 
+            - contianerPort: 80
