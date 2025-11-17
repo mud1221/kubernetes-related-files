@@ -25,4 +25,4 @@ spec:
         - name: my-container
           image: longflew/ingress:YELLOWPAGE
           ports: 
-            - contianerPort: 80
+            - containerPort: 80
