@@ -21,7 +21,7 @@ spec:
       labels:
         app: myapp
     spec: 
-      contsiners:
+      containers:
         - name: my-container
           image: longflew/ingress:YELLOWPAGE
           ports: 
