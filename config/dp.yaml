@@ -27,11 +27,11 @@ spec:
       volumeMounts:
         - name: myconfig
           mountPath: /usr/share/nginx/html
-      ports:
-        - containerPort: 80
+          ports:
+            - containerPort: 80
       Volumes:
         - name: myconfig
-          configmap:
+          configMap:
             name: mydp-config
           secret:
             secretName: mydp-sc
