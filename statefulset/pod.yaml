@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: sfs-pod
+  namespace: qa
+  labels:
+    app: test
+spec:
+  serviceName: "test-service"
+  replicas: 4
+  minReadySeconds: 5
+  selector:
+    matchLabels:
+      app: test
+  updateStrategy:
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: test
+    spec:
+      containers:
+      - name: mycontainer
+        image: nginx:1.29
+        ports:
+          - containerPort: 80
+            protocol: TCP
