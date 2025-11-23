@@ -24,7 +24,7 @@ spec:
         app: myblueapp
     spec:
       containers:
-        - name: mycontainer
+        - name: {{ .Values.containername}}
           image: {{ .Values.myimage }}
           ports:
             - containerPort: 80

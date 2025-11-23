@@ -1,4 +1,5 @@
-myimage: longflew/ingress: BLUEPAGE
+containername: mycontainer
+myimage: longflew/ingress:BLUEPAGE
 
 strategy:
     type: RollingUpdate
