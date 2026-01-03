@@ -7,5 +7,5 @@ spec:
   selector:
     app: javapods
   ports:
-    - port: 80
+    - port: 8080
       
